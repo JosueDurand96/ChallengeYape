@@ -42,21 +42,29 @@ android {
 }
 
 dependencies {
+
     implementation(project(":domain")) // Conectar con domain
-    implementation(project(":data")) // Conectar con domain
+    implementation(project(":data")) // Conectar con data
+
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.50")
-    kapt("com.google.dagger:hilt-compiler:2.50")
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 
     // Jetpack Compose
-    implementation("androidx.activity:activity-compose:1.8.0")
-    implementation("androidx.compose.ui:ui:1.6.1")
-    implementation("androidx.compose.material:material:1.6.1")
+    implementation(libs.androidx.activity.compose.v180)
+    implementation(libs.ui)
+    implementation(libs.androidx.material)
 
     // Hilt para Jetpack Compose
-    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
+    implementation(libs.androidx.hilt.navigation.compose)
 
-    implementation("io.coil-kt:coil-compose:2.2.2")
+    // Coil
+    implementation(libs.coil.compose)
+
+    //navigation compose
+    implementation(libs.androidx.navigation.compose)
+    //Kotlinx serialization
+    implementation(libs.kotlinx.serialization.json)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

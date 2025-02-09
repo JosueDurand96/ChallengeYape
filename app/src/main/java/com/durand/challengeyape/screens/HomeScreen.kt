@@ -17,13 +17,10 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import coil.compose.rememberImagePainter
-import com.durand.challengeyape.viewmodels.RecipesViewModel
+import com.durand.challengeyape.viewmodel.RecipesViewModel
 import com.durand.domain.model.Recipe
-import dagger.hilt.android.lifecycle.HiltViewModel
 
 @Composable
 fun HomeScreen(viewModel: RecipesViewModel) {

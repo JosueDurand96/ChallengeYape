@@ -1,7 +1,7 @@
-package com.durand.challengeyape
+package com.durand.challengeyape.di
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class MainApplication : Application()
+class ChallengeApplication : Application()

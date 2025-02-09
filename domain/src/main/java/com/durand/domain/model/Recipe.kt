@@ -1,6 +1,5 @@
 package com.durand.domain.model
 
-// Data Model
 data class Recipe(
     val nombre: String,
     val descripcion: String,
