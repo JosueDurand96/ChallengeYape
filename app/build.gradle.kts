@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -40,6 +42,21 @@ android {
 }
 
 dependencies {
+    implementation(project(":domain")) // Conectar con domain
+    implementation(project(":data")) // Conectar con domain
+    // Hilt
+    implementation("com.google.dagger:hilt-android:2.50")
+    kapt("com.google.dagger:hilt-compiler:2.50")
+
+    // Jetpack Compose
+    implementation("androidx.activity:activity-compose:1.8.0")
+    implementation("androidx.compose.ui:ui:1.6.1")
+    implementation("androidx.compose.material:material:1.6.1")
+
+    // Hilt para Jetpack Compose
+    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
+
+    implementation("io.coil-kt:coil-compose:2.2.2")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

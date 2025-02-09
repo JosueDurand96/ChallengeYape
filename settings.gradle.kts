@@ -21,3 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "ChallengeYape"
 include(":app")
+include(":data")
+include(":domain")
