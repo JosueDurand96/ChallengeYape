@@ -19,11 +19,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
+import com.durand.challengeyape.navigation.MapDataInfo
+import com.durand.challengeyape.navigation.PersonalData
+import com.durand.challengeyape.navigation.PersonalDataInfo
 import com.durand.challengeyape.viewmodel.RecipesViewModel
 import com.durand.domain.model.Recipe
 
 @Composable
-fun HomeScreen(viewModel: RecipesViewModel) {
+fun HomeScreen(
+    viewModel: RecipesViewModel,
+    navigateToDescription: (PersonalDataInfo) -> Unit
+) {
     //val viewModel: RecipesViewModel = RecipesViewModel()
     val recipes by viewModel.recipes.collectAsState(initial = emptyList())
    // val recipes by viewModel.recipes.observeAsState(emptyList())
@@ -31,6 +37,17 @@ fun HomeScreen(viewModel: RecipesViewModel) {
         items(recipes.size) { index ->
             val recipe = recipes[index]
             RecipeItem(recipe, onClick = {
+                navigateToDescription(
+                    PersonalDataInfo(
+                       nombre = recipe.nombre,
+                        descripcion = recipe.descripcion,
+                        imagen = recipe.imagen,
+                        ciudad = recipe.ciudad,
+                        pais = recipe.pais,
+                        latitud = recipe.latitud.toString(),
+                        longitud = recipe.longitud.toString()
+                    )
+                )
                 //navController.navigate("detail/${recipe.id}")
             })
         }
