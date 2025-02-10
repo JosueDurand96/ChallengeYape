@@ -6,9 +6,9 @@ import com.durand.challengeyape.viewmodel.RecipesViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
-import com.durand.challengeyape.screens.DetailScreen
-import com.durand.challengeyape.screens.HomeScreen
-import com.durand.challengeyape.screens.MapScreen
+import com.durand.challengeyape.screens.detail.DetailScreen
+import com.durand.challengeyape.screens.home.HomeScreen
+import com.durand.challengeyape.screens.map.MapScreen
 import kotlin.reflect.typeOf
 
 @Composable
