@@ -36,6 +36,7 @@ android {
 
 dependencies {
     implementation(libs.hilt.android)
+    testImplementation(project(":data"))
     kapt(libs.hilt.compiler)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
@@ -46,4 +47,12 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    // Mockito para mockear dependencias
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.inline)
+    // Coroutines para pruebas en Kotlin
+    testImplementation(libs.kotlinx.coroutines.test)
+    // Mockito con soporte para JUnit (MockitoRule)
+    testImplementation(libs.mockito.junit.jupiter)
+    testImplementation(libs.turbine)
 }

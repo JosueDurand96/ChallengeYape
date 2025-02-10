@@ -59,8 +59,8 @@ dependencies {
     testImplementation(libs.mockito.junit.jupiter)
 
     // Coroutines para pruebas en Kotlin
-    testImplementation(libs.kotlinx.coroutines.test.v173)
+    testImplementation(libs.kotlinx.coroutines.test)
 
-    testImplementation("app.cash.turbine:turbine:1.0.0")
+    testImplementation(libs.turbine)
 
 }

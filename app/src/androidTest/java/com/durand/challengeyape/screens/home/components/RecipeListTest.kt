@@ -45,6 +45,7 @@ class RecipeListTest {
             longitud = 139.0
         )
     )
+
     // Mock de WindowSizeClass para simular diferentes tamaños de pantalla
     val mockWindowSizeClass: WindowSizeClass = mockk {
         every { widthSizeClass } returns WindowWidthSizeClass.Compact

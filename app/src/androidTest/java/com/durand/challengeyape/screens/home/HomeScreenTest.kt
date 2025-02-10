@@ -1,26 +1,16 @@
 package com.durand.challengeyape.screens.home
 
-import androidx.activity.ComponentActivity
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.test.*
-import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.durand.challengeyape.navigation.PersonalDataInfo
 import com.durand.challengeyape.viewmodel.RecipesViewModel
 import com.durand.challengeyape.viewmodel.UiState
 import com.durand.domain.model.Recipe
-import com.durand.challengeyape.ui.theme.ChallengeYapeTheme
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.flow.MutableStateFlow
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.junit.runner.RunWith
-
 import androidx.compose.ui.test.junit4.createComposeRule
-import kotlinx.coroutines.flow.asStateFlow
 
 class HomeScreenTest {
 

@@ -27,7 +27,6 @@ class PlaceDetailsTest {
             )
         )
 
-
         composeTestRule.setContent {
             PlaceDetails(data = testMapData)
         }

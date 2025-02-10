@@ -28,7 +28,8 @@ class MobileLayoutTest {
                 longitud = "-122.4194"
             )
         )
-        val fakeLocation = LatLng(fakeData.info.latitud.toDouble(), fakeData.info.longitud.toDouble())
+        val fakeLocation =
+            LatLng(fakeData.info.latitud.toDouble(), fakeData.info.longitud.toDouble())
 
         composeTestRule.setContent {
             MobileLayout(data = fakeData, location = fakeLocation, modifier = Modifier)
@@ -42,5 +43,4 @@ class MobileLayoutTest {
         composeTestRule.onNodeWithTag("PlaceImage").assertExists() //
         composeTestRule.onNodeWithTag("PlaceMap").assertExists()
     }
-
 }

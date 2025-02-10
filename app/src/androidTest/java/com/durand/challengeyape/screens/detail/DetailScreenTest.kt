@@ -63,8 +63,10 @@ class DetailScreenTest {
     @Test
     fun verifyCompactLayoutOrExpandedLayoutIsDisplayed() {
         // Comprueba si al menos una de las vistas existe
-        val compactExists = composeTestRule.onAllNodesWithText("Pizza").fetchSemanticsNodes().isNotEmpty()
-        val expandedExists = composeTestRule.onAllNodesWithText("Pizza").fetchSemanticsNodes().isNotEmpty()
+        val compactExists =
+            composeTestRule.onAllNodesWithText("Pizza").fetchSemanticsNodes().isNotEmpty()
+        val expandedExists =
+            composeTestRule.onAllNodesWithText("Pizza").fetchSemanticsNodes().isNotEmpty()
 
         assert(compactExists || expandedExists)
     }
