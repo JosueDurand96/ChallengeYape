@@ -11,6 +11,14 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+-keep class com.durand.challengeyape.model.** { *; }
+-keep class dagger.** { *; }
+-keep class com.durand.challengeyape.di.** { *; }
+-keep class androidx.compose.** { *; }
+-keep class kotlin.Metadata { *; }
+-assumenosideeffects class android.util.Log { *; }
+-dontwarn retrofit2.**
+-keep class retrofit2.** { *; }
 
 # Uncomment this to preserve the line number information for
 # debugging stack traces.

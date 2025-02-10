@@ -10,6 +10,7 @@ import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.durand.challengeyape.navigation.PersonalDataInfo
 import com.durand.challengeyape.screens.home.toPersonalDataInfo
@@ -31,8 +32,11 @@ fun RecipeList(
     } else {
         LazyVerticalGrid(
             columns = GridCells.Adaptive(minSize = 180.dp),
-            modifier = Modifier.fillMaxWidth()
-        ) {
+            modifier = Modifier
+                .fillMaxWidth()
+                .testTag("RecipeItem"),
+
+            ) {
             items(recipes) { recipe ->
                 RecipeItem(recipe) { navigateToDescription(recipe.toPersonalDataInfo()) }
             }

@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 
@@ -20,6 +21,7 @@ fun RecipeImage(imageUrl: String) {
         modifier = Modifier
             .fillMaxWidth()
             .height(250.dp)
+            .testTag("RecipeImage") // <-- Asegurar que el test lo detecte
             .clip(RoundedCornerShape(12.dp)),
         contentScale = ContentScale.Crop
     )

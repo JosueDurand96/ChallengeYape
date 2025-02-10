@@ -9,7 +9,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 
-// Componente para el TopAppBar con botón de retroceso
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MapTopBar(title: String, onBackPress: () -> Unit) {
@@ -17,7 +16,7 @@ fun MapTopBar(title: String, onBackPress: () -> Unit) {
         title = { Text(text = "Ubicación de $title") },
         navigationIcon = {
             IconButton(onClick = onBackPress) {
-                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Regresar")
+                Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
             }
         }
     )

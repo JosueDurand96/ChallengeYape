@@ -8,6 +8,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
@@ -23,6 +24,7 @@ fun PlaceMap(location: LatLng, modifier: Modifier = Modifier) {
         modifier = modifier
             .fillMaxWidth()
             .height(300.dp)
+            .testTag("PlaceMap")
             .clip(RoundedCornerShape(12.dp))
     ) {
         GoogleMap(

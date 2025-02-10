@@ -12,6 +12,7 @@ import com.durand.challengeyape.navigation.MapData
 import com.google.android.gms.maps.model.LatLng
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
+import androidx.compose.ui.platform.testTag
 import com.durand.challengeyape.screens.map.components.MapTopBar
 import com.durand.challengeyape.screens.map.components.MobileLayout
 import com.durand.challengeyape.screens.map.components.TabletLayout
@@ -38,7 +39,7 @@ fun MapScreen(
         ) {
             when (windowSizeClass.widthSizeClass) {
                 WindowWidthSizeClass.Compact -> {
-                    MobileLayout(data, location)
+                    MobileLayout(data, location,  modifier = Modifier.testTag("MobileLayout") )
                 }
                 WindowWidthSizeClass.Medium, WindowWidthSizeClass.Expanded -> {
                     TabletLayout(data, location)

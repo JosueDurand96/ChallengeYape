@@ -48,4 +48,19 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(libs.mockwebserver)
+    // JUnit para pruebas unitarias
+
+    // Mockito para mockear dependencias
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.inline)
+
+    // Mockito para pruebas con JUnit
+    testImplementation(libs.mockito.junit.jupiter)
+
+    // Coroutines para pruebas en Kotlin
+    testImplementation(libs.kotlinx.coroutines.test.v173)
+
+    testImplementation("app.cash.turbine:turbine:1.0.0")
+
 }

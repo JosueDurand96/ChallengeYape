@@ -7,15 +7,16 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.durand.challengeyape.navigation.MapData
 import com.google.android.gms.maps.model.LatLng
 
 // Diseño para móviles (Compact)
 @Composable
-fun MobileLayout(data: MapData, location: LatLng) {
+fun MobileLayout(data: MapData, location: LatLng, modifier: Modifier = Modifier) {
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .padding(16.dp)
     ) {

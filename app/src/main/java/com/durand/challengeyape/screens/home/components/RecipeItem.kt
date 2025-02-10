@@ -14,6 +14,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import com.durand.domain.model.Recipe
@@ -41,7 +42,9 @@ fun RecipeItem(recipe: Recipe, onClick: () -> Unit) {
             Text(
                 text = recipe.nombre,
                 style = MaterialTheme.typography.headlineSmall,
-                modifier = Modifier.padding(top = 8.dp)
+                modifier = Modifier
+                    .testTag("RecipeItem")
+                    .padding(top = 8.dp)
             )
         }
     }

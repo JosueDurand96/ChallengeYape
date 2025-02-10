@@ -25,7 +25,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -42,17 +42,29 @@ android {
     buildFeatures {
         compose = true
     }
+    packagingOptions {
+        resources {
+            excludes += "META-INF/LICENSE.md"
+            excludes += "META-INF/LICENSE-notice.md"
+            excludes += "META-INF/LICENSE.txt"
+            excludes += "META-INF/NOTICE.txt"
+            excludes += "META-INF/DEPENDENCIES"
+        }
+    }
 }
 
 dependencies {
     implementation(project(":domain")) // Conectar con domain
     implementation(project(":data")) // Conectar con data
+
     implementation(libs.material.window.size)
     // Maps
     implementation(libs.maps.compose)
     implementation(libs.play.services.maps)
     // Hilt
     implementation(libs.hilt.android)
+    implementation(libs.androidx.ui.test.junit4.android)
+    implementation(libs.androidx.navigation.testing)
     kapt(libs.hilt.compiler)
     // Jetpack Compose
     implementation(libs.androidx.activity.compose.v180)
@@ -78,10 +90,24 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.runtime.livedata)
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    // Mockk para mocks y stubbing
+    testImplementation(libs.mockk)
+    // Coroutines Testing para pruebas asíncronas
+    testImplementation(libs.kotlinx.coroutines.test)
+    // Turbine para pruebas de Flow
+    testImplementation(libs.turbine)
+    // Kotlinx Serialization para serialización/deserialización de JSON
+    testImplementation(libs.kotlinx.serialization.json.v151)
+    testImplementation(libs.robolectric)
+    // Actualizar MockK a la última versión
+
+    androidTestImplementation(libs.mockk.android)
+    androidTestImplementation(libs.androidx.junit.v115) // Versión correcta
+    androidTestImplementation(libs.androidx.espresso.core.v351)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    configurations.all {
+        resolutionStrategy.force("androidx.test.ext:junit:1.1.5")
+    }
 }

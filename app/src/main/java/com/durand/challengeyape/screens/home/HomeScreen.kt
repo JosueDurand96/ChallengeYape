@@ -16,6 +16,7 @@ import com.durand.challengeyape.viewmodel.UiState
 import com.durand.domain.model.Recipe
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.platform.testTag
 import com.durand.challengeyape.screens.home.components.HeaderText
 import com.durand.challengeyape.screens.home.components.RecipeList
 
@@ -42,7 +43,9 @@ fun HomeScreen(
         when (uiState) {
             is UiState.Loading -> {
                 Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    CircularProgressIndicator()
+                    CircularProgressIndicator(
+                        modifier = Modifier.testTag("LoadingIndicator")
+                    )
                 }
             }
             is UiState.Success -> {

@@ -8,13 +8,16 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.durand.challengeyape.navigation.MapData
 
 // Componente para los detalles del lugar
 @Composable
 fun PlaceDetails(data: MapData) {
-    Column(modifier = Modifier.padding(horizontal = 16.dp)) {
+    Column(modifier = Modifier
+        .testTag("PlaceDetails")
+        .padding(horizontal = 16.dp)) {
         Text(
             text = data.info.nombre,
             style = MaterialTheme.typography.headlineSmall
