@@ -1,5 +1,6 @@
 package com.durand.challengeyape
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -9,6 +10,7 @@ import com.durand.challengeyape.ui.theme.ChallengeYapeTheme
 import com.durand.challengeyape.viewmodel.RecipesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.durand.challengeyape.navigation.NavigationWrapper
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -20,7 +22,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             ChallengeYapeTheme {
                 val viewModel: RecipesViewModel = hiltViewModel()
-                HomeScreen(viewModel)
+                NavigationWrapper(
+                    viewModel = viewModel,
+                )
             }
         }
     }

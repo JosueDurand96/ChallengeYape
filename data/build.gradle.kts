@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.durand.data"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24
