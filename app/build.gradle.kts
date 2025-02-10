@@ -45,30 +45,27 @@ android {
 }
 
 dependencies {
-
     implementation(project(":domain")) // Conectar con domain
     implementation(project(":data")) // Conectar con data
-
+    implementation(libs.material.window.size)
+    // Maps
+    implementation(libs.maps.compose)
+    implementation(libs.play.services.maps)
     // Hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
-
     // Jetpack Compose
     implementation(libs.androidx.activity.compose.v180)
     implementation(libs.ui)
     implementation(libs.androidx.material)
-
     // Hilt para Jetpack Compose
     implementation(libs.androidx.hilt.navigation.compose)
-
     // Coil
     implementation(libs.coil.compose)
-
     //navigation compose
     implementation(libs.androidx.navigation.compose)
     //Kotlinx serialization
     implementation(libs.kotlinx.serialization.json)
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

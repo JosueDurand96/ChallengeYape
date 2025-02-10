@@ -31,6 +31,7 @@ fun NavigationWrapper(
             DetailScreen(
                 data = data,
                 navigateToMap = { navController.navigate(MapData(it)) },
+                onBackPress = { navController.popBackStack() }
             )
         }
 
@@ -38,6 +39,7 @@ fun NavigationWrapper(
             val data: MapData = backStackEntry.toRoute()
             MapScreen(
                 data = data,
+                onBackPress = { navController.popBackStack() }
             )
         }
     }
