@@ -1,50 +1,76 @@
-# 🍽 Recetario Internacional 🌍
+# 🍽️ Recetario Internacional 🌍
 
-**Recetario Internacional** es una aplicación móvil desarrollada en **Kotlin** con **Jetpack Compose**, que permite a los usuarios explorar recetas icónicas de distintos países del mundo. Con una interfaz moderna y atractiva, podrás navegar entre las recetas, conocer su descripción y visualizar en un mapa la ubicación del país al que pertenecen.
-
----
-
-## 🚀 Características Principales
-✔️ **Búsqueda de recetas** con un listado interactivo.  
-✔️ **Visualización detallada** de cada receta con imágenes y descripciones.  
-✔️ **Integración con Google Maps** para mostrar la ubicación del país de origen de cada platillo.  
-✔️ **Interfaz adaptable (Responsive Design)** para dispositivos móviles y tablets.  
-✔️ **Arquitectura limpia (Clean Architecture)** con modularización y separación de responsabilidades.  
-✔️ **Optimización con ProGuard** para mejorar la seguridad y reducir el tamaño del APK.  
-✔️ **Pruebas unitarias e instrumentadas** con JUnit, Mockk y Turbine.  
+📱 Aplicación Android desarrollada en **Kotlin** con **Jetpack Compose**, que te permite explorar **las recetas más icónicas del mundo**. Desde **Ceviche peruano** hasta **Sushi japonés**, podrás descubrir la historia de cada platillo y su ubicación en el mapa. 🗺️
 
 ---
 
-## 🎨 Flujo de la Aplicación
-1️⃣ **Pantalla de Inicio (HomeScreen)**  
-   - Lista de recetas con buscador.  
-   - Vista previa de cada platillo con imagen y nombre.  
+## 🚀 Funcionalidades Principales
 
-2️⃣ **Pantalla de Descripción (DetailScreen)**  
-   - Descripción detallada del platillo.  
-   - Imagen en alta calidad.  
-
-3️⃣ **Pantalla de Mapa (MapScreen)**  
-   - Muestra en **Google Maps** la ubicación del país de origen de la receta.  
-   - Permite al usuario visualizar geográficamente la procedencia del platillo.  
+✅ **Explora recetas** con un buscador intuitivo.  
+✅ **Visualiza los detalles** de cada platillo con imágenes y descripciones detalladas.  
+✅ **Consulta el país de origen** de cada receta con **Google Maps**.  
+✅ **Interfaz adaptativa (Responsive Design)** para móviles y tablets.  
+✅ **Arquitectura limpia (Clean Architecture)** con modularización.  
+✅ **Seguridad y optimización** con **ProGuard**.  
+✅ **Pruebas unitarias e instrumentadas** con JUnit, Mockk y Turbine.
 
 ---
 
-## 🛠 Tecnologías y Librerías Utilizadas
-| 🔧 Tecnología  | 📌 Uso en el Proyecto |
+## 🎨 Flujo de Navegación
+
+1️⃣ **📜 Lista de Recetas**
+- Un buscador que filtra recetas en tiempo real.
+- Imágenes en miniatura con nombres de los platillos.
+
+2️⃣ **📖 Detalle de la Receta**
+- Imagen en alta calidad.
+- Descripción del platillo con ingredientes principales.
+
+3️⃣ **🗺️ Ubicación del Platillo**
+- Muestra en **Google Maps** el país de origen de la receta.
+
+---
+
+## 📦 Arquitectura y Modularización
+
+El proyecto sigue los principios de **Clean Architecture** y está dividido en **tres módulos principales**:
+
+
+---
+
+## 🔧 Tecnologías Utilizadas
+
+| Tecnología  | Propósito |
 |--------------|----------------------|
-| **Jetpack Compose** | UI declarativa moderna para Android. |
-| **Navigation Compose** | Manejo de rutas y navegación fluida. |
-| **Dagger Hilt** | Inyección de dependencias para escalabilidad y mantenimiento. |
-| **Retrofit** | Consumo de la API REST. |
-| **Coil** | Carga y renderizado eficiente de imágenes. |
-| **Google Maps API** | Geolocalización de las recetas en el mapa. |
-| **Coroutines & Flow** | Programación asíncrona y manejo de datos reactivos. |
-| **JUnit, Mockk & Turbine** | Pruebas unitarias e instrumentadas. |
+| **Jetpack Compose** | UI declarativa moderna. |
+| **Navigation Compose** | Manejo de rutas. |
+| **Dagger Hilt** | Inyección de dependencias. |
+| **Retrofit** | Consumo de API REST. |
+| **Coil** | Carga eficiente de imágenes. |
+| **Google Maps API** | Ubicación de recetas en el mapa. |
+| **Coroutines & Flow** | Programación asíncrona. |
+| **JUnit, Mockk & Turbine** | Pruebas automatizadas. |
 | **ProGuard** | Ofuscación y optimización del código. |
 
 ---
 
-## 📦 Estructura del Proyecto
-Este proyecto sigue los principios de **Clean Architecture** y está modularizado en tres capas principales:
+## 🌐 API REST
+
+La aplicación consume datos de una API con la siguiente estructura JSON:
+
+🔗 **[Enlace a la API](https://mocki.io/v1/a6876d70-a9b5-4328-8513-ee10d390f6a7)**
+
+📌 **Ejemplo de respuesta JSON:**
+```json
+[
+    {
+        "nombre": "Ceviche",
+        "descripcion": "Plato tradicional peruano de pescado crudo marinado en jugo de limón con cebolla, ají y cilantro.",
+        "imagen": "https://cdn0.recetasgratis.net/es/posts/8/7/2/ceviche_mixto_peruano_77278_orig.jpg",
+        "ciudad": "Lima",
+        "pais": "Perú",
+        "latitud": -12.0464,
+        "longitud": -77.0428
+    }
+]
 
