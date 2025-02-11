@@ -38,19 +38,37 @@ El proyecto sigue los principios de **Clean Architecture** y está dividido en *
 
 ---
 
-## 🔧 Tecnologías Utilizadas
+## 🔧 Tecnologías Utilizadas y Argumentación
 
-| Tecnología  | Propósito |
+| Tecnología  | ¿Por qué se usó? |
 |--------------|----------------------|
-| **Jetpack Compose** | UI declarativa moderna. |
-| **Navigation Compose** | Manejo de rutas. |
-| **Dagger Hilt** | Inyección de dependencias. |
-| **Retrofit** | Consumo de API REST. |
-| **Coil** | Carga eficiente de imágenes. |
-| **Google Maps API** | Ubicación de recetas en el mapa. |
-| **Coroutines & Flow** | Programación asíncrona. |
-| **JUnit, Mockk & Turbine** | Pruebas automatizadas. |
-| **ProGuard** | Ofuscación y optimización del código. |
+| **Jetpack Compose** | Para una UI declarativa moderna, eficiente y fácil de escalar. |
+| **Navigation Compose** | Manejo eficiente de rutas dentro de la aplicación. |
+| **Dagger Hilt** | Inyección de dependencias para modularidad y escalabilidad. |
+| **Retrofit** | Consumo de API REST de manera sencilla y robusta. |
+| **Coil** | Carga rápida y eficiente de imágenes desde la red. |
+| **Google Maps API** | Para visualizar la ubicación geográfica de cada receta. |
+| **Coroutines & Flow** | Manejo de programación asíncrona sin bloqueos. |
+| **JUnit, Mockk & Turbine** | Implementación de pruebas unitarias y de flujo. |
+| **ProGuard** | Ofuscación y optimización del código para mayor seguridad. |
+
+📌 **Explicación detallada de cada una:**
+
+- **Jetpack Compose**: Permite construir interfaces declarativas con menos código, sin necesidad de usar `XML`. Su integración con `ViewModel` y `LiveData` lo hace ideal para manejar estados de UI reactivos.
+- **Navigation Compose**: Facilita la navegación entre pantallas sin necesidad de usar fragmentos, reduciendo el acoplamiento y mejorando la legibilidad del código.
+- **Dagger Hilt**: Gestión de dependencias automatizada, evita el uso manual de `Singletons` y mejora la mantenibilidad del código.
+- **Retrofit**: Simplifica la conexión con la API REST para obtener recetas. Se combina con `GsonConverterFactory` para transformar JSON en objetos Kotlin fácilmente.
+- **Coil**: Librería optimizada para Jetpack Compose que carga imágenes de manera eficiente y con soporte de caché automático.
+- **Google Maps API**: Permite mostrar la ubicación exacta del país de cada receta, mejorando la experiencia del usuario.
+- **Coroutines & Flow**: Manejo eficiente de llamadas a la API sin bloquear el hilo principal. `Flow` permite flujos de datos reactivos.
+- **JUnit, Mockk & Turbine**:
+    - **JUnit**: Framework principal para pruebas unitarias.
+    - **Mockk**: Simulación de dependencias en pruebas.
+    - **Turbine**: Pruebas de flujos `Flow` en Kotlin, asegurando respuestas correctas.
+- **ProGuard**:
+    - Reduce el tamaño del APK eliminando código no utilizado.
+    - Protege contra ingeniería inversa mediante ofuscación del código.
+    - Mejora el rendimiento al optimizar bytecode.
 
 ---
 
@@ -74,3 +92,4 @@ La aplicación consume datos de una API con la siguiente estructura JSON:
     }
 ]
 
+🚀 Desarrollado por Josue Durand
