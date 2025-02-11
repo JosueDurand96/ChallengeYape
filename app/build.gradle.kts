@@ -26,6 +26,7 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -101,8 +102,6 @@ dependencies {
     // Kotlinx Serialization para serialización/deserialización de JSON
     testImplementation(libs.kotlinx.serialization.json.v151)
     testImplementation(libs.robolectric)
-    // Actualizar MockK a la última versión
-
     androidTestImplementation(libs.mockk.android)
     androidTestImplementation(libs.androidx.junit.v115) // Versión correcta
     androidTestImplementation(libs.androidx.espresso.core.v351)

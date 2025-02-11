@@ -14,16 +14,67 @@
 -keep class com.durand.challengeyape.model.** { *; }
 -keep class dagger.** { *; }
 -keep class com.durand.challengeyape.di.** { *; }
--keep class androidx.compose.** { *; }
 -keep class kotlin.Metadata { *; }
 -assumenosideeffects class android.util.Log { *; }
--dontwarn retrofit2.**
--keep class retrofit2.** { *; }
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# Mantener clases de inyección de Hilt
+-keep class dagger.hilt.** { *; }
+-keep class androidx.hilt.** { *; }
+-keep class com.durand.challengeyape.** { *; }
+-keepclassmembers class * {
+    @dagger.** <fields>;
+}
+-keepattributes RuntimeVisibleAnnotations
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# Mantener clases de Google Maps
+-keep class com.google.android.gms.maps.** { *; }
+-keep class com.google.maps.android.** { *; }
+-keep class androidx.compose.maps.** { *; }
+
+# Mantener clases de Coil
+-keep class coil.** { *; }
+-keep class coil.compose.** { *; }
+-dontwarn coil.**
+
+# Mantener clases de serialización JSON
+-keep class kotlinx.serialization.** { *; }
+-keep class com.durand.domain.model.** { *; }
+-dontwarn kotlinx.serialization.**
+
+# Mantener clases esenciales de Compose
+-keep class androidx.compose.** { *; }
+-keep class androidx.activity.compose.** { *; }
+-keep class androidx.lifecycle.viewmodel.compose.** { *; }
+-keep class androidx.hilt.navigation.compose.** { *; }
+
+# Mantener clases de Navigation Compose
+-keep class androidx.navigation.** { *; }
+-keep class androidx.compose.navigation.** { *; }
+-keep class com.durand.challengeyape.navigation.** { *; }
+
+# Mantener clases para pruebas con Mockk y Turbine
+-keep class io.mockk.** { *; }
+-keep class app.cash.turbine.** { *; }
+-dontwarn io.mockk.**
+-dontwarn app.cash.turbine.**
+
+# Evitar problemas con Kotlin Reflection en Navigation
+-keepattributes *Annotation*
+-keep class kotlin.reflect.** { *; }
+-dontwarn kotlin.reflect.**
+
+# Evitar problemas con Compose Navigation y rutas
+-dontwarn androidx.navigation.**
+
+# Mantener ViewModel y evitar eliminación de métodos públicos
+-keep class com.durand.challengeyape.viewmodel.** { *; }
+-keepclassmembers class * extends androidx.lifecycle.ViewModel {
+    public <init>(...);
+}
+
+# Evitar problemas con Jetpack Compose
+-keep class androidx.compose.runtime.** { *; }
+-keep class androidx.navigation.compose.** { *; }
+
+# Evitar advertencias de ProGuard sobre rutas en Navigation
+-dontwarn androidx.navigation.toRoute
